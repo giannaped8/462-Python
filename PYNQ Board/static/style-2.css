@@ -1,0 +1,27 @@
+/* Headings */
+* {
+  font-family:'Courier New', Courier, monospace;
+  font-weight:bold;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #10929e;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #76b4be;
+}
+
+
+/* Lists */
+ul,
+ol {
+  font-size: 0.8rem;
+  color: #333333;
+  font-weight:100;
+}
+
+
+
