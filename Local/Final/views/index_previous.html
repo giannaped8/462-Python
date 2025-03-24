@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AES Encryption Website">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Milestone 2</title>
+</head>
+
+<body>
+    <h1>Senior Capstone Project: AES Python Encryption</h1>
+    <h2>Enter a string below, and we will encrypt it with AES-128.</h2>
+    <form action="/encrypt" method="post">
+        <label for="input">Input:</label>
+        <input type="text" id="input" name="input" required>
+        <button type="submit">Encrypt</button>
+    </form>
+
+    <h2>Previous Submissions</h2>
+    <ul>
+        % for input_id, data in strings.items():
+            <li>Submission #{{ input_id }}, {{ data['value'] }} = {{ data['encrypt'] }}</li>
+        % end
+    </ul>
+
+    <script>
+        // JavaScript code here
+        document.write("Embedded JavaScript Here!");
+    </script>
+</body>
+
+</html>
