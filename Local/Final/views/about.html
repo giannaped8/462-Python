@@ -1,9 +1,65 @@
 <!DOCTYPE html>
-<html>
-  <body>
-   <div class="about">
-     <h1>About me</h1>
-     <p>This is a portfolio site about anything that can be put in a portfolio.</p>
-   </div>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AES Encryption Website">
+  <link rel="stylesheet" type="text/css" href="/static/style1.css?v={{time}}">
+  <title>AES Encryption</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a id="nav_timing">Timing</a></li>
+        <li><a id="nav_history">History</a></li>
+        <li><a id="nav_demo">Demo</a></li>
+        <li><a id="nav_learn">Learn</a></li>
+        <li><a class="active" id="nav_about">About</a></li>
+        <li><a id="nav_home">Home</a></li>
+        <li><a style="float:left" id="navTitle">AES Encryption</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>ABOUT</h1>
+  </main>
+
+  <script>
+    document.getElementById('nav_history').addEventListener('click', function (event) {
+      event.preventDefault();  // Prevent default anchor behavior
+      window.location.href = '/history';  // Navigate to the history page
+    });
+
+    document.getElementById('nav_demo').addEventListener('click', function (event) {
+      event.preventDefault();  // Prevent default anchor behavior
+      window.location.href = '/demo';  // Navigate to the history page
+    });
+
+    document.getElementById('nav_timing').addEventListener('click', function (event) {
+      event.preventDefault();  // Prevent default anchor behavior
+      window.location.href = '/timing';  // Navigate to the timing page
+    });
+
+    document.getElementById('nav_learn').addEventListener('click', function (event) {
+      event.preventDefault();  // Prevent default anchor behavior
+      window.location.href = '/learn';  // Navigate to the learn page
+    });
+
+    document.getElementById('nav_about').addEventListener('click', function (event) {
+      event.preventDefault();  // Prevent default anchor behavior
+      window.location.href = '/about';  // Navigate to the About page
+    });
+
+    document.getElementById('nav_home').addEventListener('click', function (event) {
+      event.preventDefault();  // Prevent default anchor behavior
+      window.location.href = '/';  // Navigate to the home page
+    });
+
+  </script>
+</body>
+
 </html>
