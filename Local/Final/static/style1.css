@@ -14,6 +14,10 @@ img {
 
 
 /* Navigation Bar */
+nav{
+  height: fit-content;
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -24,29 +28,35 @@ nav ul {
   top: 0;
   width: 100%;
   font-family: 'Courier New', Courier, monospace;
-  font-size:medium;
 }
+
 nav li :not(#navTitle){
   float: right;
 }
+
 nav li a {
   display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
+  margin-top: 5px;
   text-decoration: none;
+  font-size:medium;
 }
 .active {
   background-color: black;
 }
 nav li a:hover{
-  text-decoration: underline;
+  color: black;
+  font-weight: bold;
 }
 #navTitle:hover, .active:hover{
+  color: white;
+  font-weight: normal;
   text-decoration: none;
 }
 #navTitle{
-  font-size:large;
+  font-size:larger;
 }
 
 
@@ -62,7 +72,7 @@ body {
     align-items: flex-start;
 
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: black;
 }
 
 header{
@@ -142,7 +152,6 @@ main{
 }
 
 .mid_home{
-
   height: fit-content;
 
   margin: 2rem;
@@ -156,13 +165,48 @@ main{
 
 
 
+/* ABOUT PAGE */
+#about_holder{
+  margin: 2rem;
+  padding: 10pt;
+  background-color: white;
+  color: black;
+  height: max-content;
+}
+#about_clear{
+  clear:both;
+}
+ #aes_about {   /*image*/
+  float: right;    
+  margin: 0 0 0 15px;
+  width: 30%;
+  height: auto;
+  }
 
 
 
 
+/* LEARN PAGE */
+#learn_main{
+  margin: 2rem;
+  padding: 10pt;
+  background-color: white;
+  color: black;
+  height: max-content;
+}
 
 
-/* Demo */
+
+
+/* DEMO PAGE */
+#demo_main{
+  margin: 2rem;
+  padding: 10pt;
+  background-color: white;
+  color: black;
+  height: max-content;
+}
+
 form {
   margin: 20px auto;
   padding: 10px;
@@ -170,4 +214,28 @@ form {
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   width: 50%;
+}
+
+
+
+
+
+
+/* HISTORY PAGE */
+#history_main{
+  margin: 2rem;
+  padding: 10pt;
+  background-color: white;
+  color: black;
+  height: max-content;
+}
+
+
+/* TIMING PAGE */
+#timing_main{
+  margin: 2rem;
+  padding: 10pt;
+  background-color: white;
+  color: black;
+  height: max-content;
 }

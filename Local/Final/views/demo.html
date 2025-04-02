@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AES Encryption Website">
     <link rel="stylesheet" type="text/css" href="/static/style1.css?v={{time}}">
-    <title>AES Encryption</title>
+    <title>AES Encryption Explorer</title>
 </head>
 
 <body>
@@ -19,13 +19,14 @@
                 <li><a id="nav_learn">Learn</a></li>
                 <li><a id="nav_about">About</a></li>
                 <li><a id="nav_home">Home</a></li>
-                <li><a style="float:left" id="navTitle">AES Encryption</a></li>
+                <li><a style="float:left" id="navTitle">AES Encryption Explorer</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="title">
+        <div id="demo_main">
+        <div class="demo_title">
             <h1>Senior Capstone Project: AES Python Encryption</h1>
             <h2>Enter a string below, and we will encrypt it with AES-128.</h2>
         </div>
@@ -40,7 +41,7 @@
             <h2 id="submissionsTitle" style="display: none;">Previous Submissions</h2>
             <ul id="submissionsList"></ul>
         </div>
-
+    </div>
     </main>
 
     <script>
