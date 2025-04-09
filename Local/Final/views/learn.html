@@ -9,7 +9,7 @@
   <title>AES Encryption Explorer</title>
 </head>
 
-<body>
+<body id="body_learn">
   <header>
     <nav>
       <ul>
@@ -43,27 +43,67 @@
       <div id="text_learn">
         <h1>Learn How AES Encryption Works</h1>
 
-        <p>Welcome to <strong>AES Encryption Explorer</strong>, an interactive educational website designed to deepen
-          your
-          understanding of Advanced Encryption Standard (AES)
-          —the gold standard for secure data encryption. Whether you're a student, researcher, or cybersecurity
-          enthusiast, our platform provides an engaging way to explore AES
-          through live demonstrations and performance-optimized hardware acceleration. </p>
+        <br>
+        <br>
 
         <div id="Sbox">
+          <hr>
           <h2>Substitution Box (S-Box)</h2>
+         
+          <br> <br>
         </div>
 
 
-        <div id="keyExpansion"></div>
-        <div id="addRoundKey"></div>
-        <div id="subBytes"></div>
-        <div id="shiftRows"></div>
-        <div id="mixColumns"></div>
+        <div id="keyExpansion">
+          <hr>
+          <h2>Key Expansion</h2>
+
+          <br> <br>
+        </div>
+
+
+        <div id="addRoundKey">
+          <hr>
+          <h2>Add Round Key</h2>
+
+          <br> <br>
+        </div>
+
+
+        <div id="subBytes">
+          <hr>
+          <h2>Sub Bytes</h2>
+
+          <br> <br>
+        </div>
+
+
+        <div id="shiftRows">
+          <hr>
+          <h2>Shift Rows</h2>
+
+          <br> <br>
+        </div>
+
+
+        <div id="mixColumns">
+          <hr>
+          <h2>Mix Columns</h2>
+
+          <br> <br>
+        </div>
 
       </div>
     </div>
   </main>
+
+  <footer id="footer_learn">
+    <ul>
+      <li><a id="source1_learn">Citation 1</a></li>
+      <li><a id="source2_learn">Citation 2</a></li>
+      <li><a id="source3_learn">Citation 3</a></li>
+    </ul>
+  </footer>
 
   <script>
     document.getElementById('nav_history').addEventListener('click', function (event) {
