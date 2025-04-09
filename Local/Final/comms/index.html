@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AES Encryption Website">
+    <link rel="stylesheet" type="text/css" href="/static/style1.css?v={{time}}">
+    <title>AES Encryption Explorer</title>
+</head>
+
+<body>
+
+    <main>
+        <div id="demo_main">
+        <div class="demo_title">
+            <h1>Senior Capstone Project: AES Python Encryption</h1>
+            <h2>Enter a string below, and we will encrypt it with AES-128.</h2>
+        </div>
+
+        <form id="encryptForm" action="/encrypt" method="post">
+            <label for="input">Input:</label>
+            <input type="text" id="input" name="input" required>
+            <button type="submit">Encrypt</button>
+        </form>
+
+        <div class="output">
+            <h2 id="submissionsTitle" style="display: none;">Previous Submissions</h2>
+            <ul id="submissionsList"></ul>
+        </div>
+    </div>
+    </main>
+
+    <script>
+        // Fetch the encrypted strings dynamically from the server
+        async function fetchStrings() {
+            try {
+                let response = await fetch('/get_strings');  // Fetch JSON data from a new Bottle route
+                let data = await response.json();
+
+                let list = document.getElementById("submissionsList");
+                let title = document.getElementById("submissionsTitle");
+
+                // Clear previous list
+                list.innerHTML = "";
+
+                if (Object.keys(data).length > 0) {
+                    title.style.display = "block";  // Show title
+                    Object.values(data).forEach(entry => {
+                        let li = document.createElement("li");
+                        li.textContent = `ID: ${entry.id} | Input: ${entry.value} | Encrypted: ${entry.encrypt}`;
+
+                        list.appendChild(li);
+                    });
+                } else {
+                    title.style.display = "none";  // Hide title if no entries
+                }
+            } catch (error) {
+                console.error("Error fetching encrypted strings:", error);
+            }
+        }
+
+
+        document.getElementById("encryptForm").addEventListener("submit", function (event) {
+            setTimeout(fetchStrings, 1000);  // Fetch data shortly after submitting
+        });
+
+        // Initial load
+        fetchStrings();
+
+
+    </script>
+</body>
+
+</html>
