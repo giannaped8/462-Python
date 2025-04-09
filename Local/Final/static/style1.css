@@ -186,19 +186,8 @@ main{
 
 
 
-/* LEARN PAGE */
-#learn_main{
-  margin: 2rem;
-  padding: 10pt;
-  background-color: white;
-  color: black;
-  height: max-content;
-}
 
-
-
-
-/* DEMO PAGE */
+  /* DEMO PAGE */
 #demo_main{
   margin: 2rem;
   padding: 10pt;
@@ -215,10 +204,6 @@ form {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   width: 50%;
 }
-
-
-
-
 
 
 /* HISTORY PAGE */
@@ -239,3 +224,49 @@ form {
   color: black;
   height: max-content;
 }
+
+
+
+
+
+
+
+
+
+
+/* LEARN PAGE */
+#text_learn{
+  margin-left:200px;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  
+  padding: 10pt;
+  background-color: white;
+  color: black;
+}
+
+
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  background-color: white;
+  position: fixed;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover{
+  background-color: #555;
+  color: white;
+}
+
