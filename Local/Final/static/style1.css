@@ -22,7 +22,6 @@ body {
   gap: 2rem;
   align-items: flex-start;
 
-  
   background-color: black;
 }
 
@@ -79,6 +78,7 @@ nav li a {
 nav li a:hover{
   color: black;
   font-weight: bold;
+  transition-duration: 0.4s;
 }
 #navTitle:hover, .active:hover{
   color: white;
@@ -191,50 +191,6 @@ nav li a:hover{
 
 
 
-  /* DEMO PAGE */
-#demo_main{
-  margin: 2rem;
-  padding: 10pt;
-  background-color: white;
-  color: black;
-  height: max-content;
-}
-
-form {
-  margin: 20px auto;
-  padding: 10px;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 50%;
-}
-
-
-/* HISTORY PAGE */
-#history_main{
-  margin: 2rem;
-  padding: 10pt;
-  background-color: white;
-  color: black;
-  height: max-content;
-}
-
-
-/* TIMING PAGE */
-#timing_main{
-  margin: 2rem;
-  padding: 10pt;
-  background-color: white;
-  color: black;
-  height: max-content;
-}
-
-
-
-
-
-
-
 
 
 
@@ -332,37 +288,82 @@ form {
 
 
 
-/*
 
-#learn_main{
-  padding-bottom: 5rem;
-}
+  /* DEMO PAGE */
+  #demo_main{
+    margin: 2rem;
+    padding: 10pt;
+    background-color: white;
+    color: black;
+    height: max-content;
+  }
+  
+  form {
+    margin: 20px auto;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    text-align:  center;
+  }
+  
+  
+  /* Table for Output Entries in Demo Page */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  button{
+    transition-duration: 0.4s;
+    background-color: #333; /* Green */
+    color: white;
+    border-radius: 5px;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  button:hover {
+    color: black;
+    background-color:white;
+    border-color: #333;
+  }
 
-#text_learn{
+  
+
+
+
+
+
+/* HISTORY PAGE */
+#history_main{
   margin: 2rem;
-  margin-left: 175px;
   padding: 10pt;
   background-color: white;
   color: black;
-}
-
-/*
-#text_learn h1, #text_learn h2{
-  font-family: 'Courier New', Courier, monospace;
+  height: max-content;
 }
 
 
-
-
-.sidebar {
-  margin: 0;
-  margin-left: 1rem;
-  padding: 0;
-  width: fit-content;
-  position: fixed;
-  overflow: auto;
-
-  background-color: #333;
-  font-family: 'Courier New', Courier, monospace;
+/* TIMING PAGE */
+#timing_main{
+  margin: 2rem;
+  padding: 10pt;
+  background-color: white;
+  color: black;
+  height: max-content;
 }
-*/

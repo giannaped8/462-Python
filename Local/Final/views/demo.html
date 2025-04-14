@@ -26,22 +26,33 @@
 
     <main>
         <div id="demo_main">
-        <div class="demo_title">
-            <h1>Senior Capstone Project: AES Python Encryption</h1>
-            <h2>Enter a string below, and we will encrypt it with AES-128.</h2>
-        </div>
+            <div class="demo_title">
+                <h1>Senior Capstone Project: AES Python Encryption</h1>
+                <h2>Enter a string below, and we will encrypt it with AES-128.</h2>
+            </div>
 
-        <form id="encryptForm" action="/encrypt" method="post">
-            <label for="input">Input:</label>
-            <input type="text" id="input" name="input" required>
-            <button type="submit">Encrypt</button>
-        </form>
+            <form id="encryptForm" action="/encrypt" method="post">
+                <label for="input">Input:</label>
+                <input type="text" id="input" name="input" required>
+                <button type="submit">Encrypt</button>
+            </form>
+            <br>
+            <br>
 
-        <div class="output">
-            <h2 id="submissionsTitle" style="display: none;">Previous Submissions</h2>
-            <ul id="submissionsList"></ul>
+            <div class="output">
+                <h2 id="submissionsTitle" style="display: none;">Previous Submissions</h2>
+
+                <table id="outputTable">
+                    <tr>
+                        <th>ID</th>
+                        <th>Input</th>
+                        <th>Encryption</th>
+                        <th>Decryption</th>
+                    </tr>
+                </table>
+
+            </div>
         </div>
-    </div>
     </main>
 
     <script>
@@ -51,27 +62,44 @@
                 let response = await fetch('/get_strings');  // Fetch JSON data from a new Bottle route
                 let data = await response.json();
 
-                let list = document.getElementById("submissionsList");
                 let title = document.getElementById("submissionsTitle");
+                let table = document.getElementById("outputTable");
 
                 // Clear previous list
-                list.innerHTML = "";
+                // table.innerHTML = "";
 
                 if (Object.keys(data).length > 0) {
                     title.style.display = "block";  // Show title
                     Object.values(data).forEach(entry => {
-                        let li = document.createElement("li");
-                        li.textContent = `ID: ${entry.id} | Input: ${entry.value} | Encrypted: ${entry.encrypt}`;
+
+                        //Create Table Entries
+                        let tr = document.createElement("tr");
+                        let td_ID = document.createElement("td");
+                        let td_Input = document.createElement("td");
+                        let td_Encrypt = document.createElement("td");
+                        let td_Decrypt = document.createElement("td");
+
 
                         // Create "Decrypt" button
                         let decryptButton = document.createElement("button");
                         decryptButton.textContent = "Decrypt";
                         decryptButton.onclick = async function () {
-                            await decryptEntry(entry.id, li, decryptButton);
+                            await decryptEntry(entry.id, tr, decryptButton);
                         };
 
-                        li.appendChild(decryptButton);
-                        list.appendChild(li);
+
+                        //Set element text
+                        td_ID.innerHTML = `${entry.id}`;
+                        td_Input.innerHTML = `${entry.value}`;
+                        td_Encrypt.innerHTML = `${entry.encrypt}`;
+                        td_Decrypt = decryptButton;
+
+                        tr.appendChild(td_ID);
+                        tr.appendChild(td_Input);
+                        tr.appendChild(td_Encrypt);
+                        tr.appendChild(td_Decrypt);
+
+                        table.appendChild(tr);
                     });
                 } else {
                     title.style.display = "none";  // Hide title if no entries
@@ -82,15 +110,15 @@
         }
 
         // Send request to decrypt an entry
-        async function decryptEntry(entryId, listItem, button) {
+        async function decryptEntry(entryId, tableRow, button) {
             try {
                 let response = await fetch(`/decrypt/${entryId}`, { method: 'POST' });
                 let data = await response.json();
 
                 if (data.decrypted) {
-                    let decryptedText = document.createElement("span");
-                    decryptedText.innerHTML = ` | Decrypted: <strong>${data.decrypted}</strong>`;
-                    listItem.appendChild(decryptedText);
+                    let decryptedText = document.createElement("td");
+                    decryptedText.innerHTML = `${data.decrypted}`;
+                    tableRow.appendChild(decryptedText);
 
                     // Hide the button after decryption
                     button.style.display = "none";
@@ -100,9 +128,6 @@
             }
         }
 
-
-        // Refresh the list every 5 seconds (or after form submission)
-        //setInterval(fetchStrings, 5000);
 
         document.getElementById("encryptForm").addEventListener("submit", function (event) {
             setTimeout(fetchStrings, 1000);  // Fetch data shortly after submitting
