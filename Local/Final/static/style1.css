@@ -241,11 +241,11 @@ nav li a:hover{
 }
 
 /* Settings for Footer placement */
-#body_learn{
+#body_learn, .about{
   position: relative;
   min-height: 100vh;
 }
-#footer_learn{
+#footer_learn, #footer_about{
   position: absolute;
   left: 0;
   bottom: 0;
@@ -255,10 +255,11 @@ nav li a:hover{
   color: white;
  
   font-style: italic;
+  font-weight: normal;
   padding: 0;
 }
 
-#footer_learn ul li{
+#footer_learn ul li, #footer_about ul li{
   padding: 1pt;
   list-style-type: none;
   text-decoration: none;

@@ -27,7 +27,6 @@
   <main>
     <div id="learn_main">
 
-
       <!-- The sidebar -->
       <div class="sidebar">
         <a href="#Sbox">S-Box</a>
@@ -38,46 +37,78 @@
         <a href="#mixColumns">Mix Columns</a>
       </div>
 
-      
-      
+
+
       <div id="text_learn">
         <h1>Learn How AES Encryption Works</h1>
         <p>
-          As data leaks continue to make daily headlines, encryption is no longer just an option—it's a necessity.
-          In this past year alone, the average cost of a single data breach soared to an all time high of 4.88 million
-          dollars <a href="#source1_learn">(Cost of a Data Breach Report 2024)</a>.
-          From medical records to confidential government documents, data privacy is essential for individuals,
-          businesses, and national security alike.
+          AES, or the Advanced Encryption Standard, is a symmetric key encryption algorithm that transforms plaintext
+          into unreadable ciphertext using a series of well-defined steps.
+          It was established by the U.S. National Institute of Standards and Technology (NIST) in 2001 and has since
+          become the global benchmark for secure data encryption [1].
         </p>
         <p>
-          The Advanced Encryption Standard (AES) is the strongest form of protection against these digital attacks,
-          arming
-          itself with a multitude of large,
-          cryptographic keys and an array of data manipulation techniques <a href="#source2_learn">(Awatit)</a>. Maintaining the highest level of
-          security over digital media, AES encryption
-          is widely employed by the U.S. government and industry leaders alike for secure data transmission and storage 
-          <a href="#source2_learn">(Awatit)</a>.
+          AES operates on data blocks of 128 bits and supports key sizes of 128, 192, or 256 bits—each increasing the
+          number of transformation rounds and enhancing security [1][2].
+          What sets AES apart is its combination of simplicity in design and formidable cryptographic strength, which
+          makes it both efficient and resistant to brute-force attacks even
+          with the most powerful computers available today [2][3].
         </p>
+
         <p>
-          Despite AES encryption's importance, understanding the step-by-step processes involved in secure encryption
-          remains complex and inaccessible to many learners.
-          Furthermore, while encryption can be software-driven, hardware acceleration offers the potential for
-          significant
-          improvements in speed and security, yet
-          practical demonstrations are limited. This gap in understanding AES encryption and hardware offloading
-          techniques creates an educational void that demands attention.
+          AES plays a pivotal role in securing everything from banking systems and cloud storage to national defense
+          networks [2][4]. Because it’s a symmetric algorithm,
+          the same key is used for both encryption and decryption—making secure key management essential. Its speed and
+          resilience have made it the go-to encryption method for
+          technologies like VPNs, encrypted messaging apps, and secure web communications (HTTPS) [2][4].
         </p>
+
         <p>
-          This project aims to develop an educational website that provides a clear, interactive demonstration of the
-          AES
-          encryption process. Moreover, it will perform
-          three main functions: illustrate each step of AES encryption in a user-friendly and visually engaging manner;
-          integrate a PYNQ circuit board to demonstrate
-          the hardware acceleration of AES encryption; and offer learners a comprehensive understanding of both the
-          theoretical and practical aspects of modern cryptographic practices.
+          At the heart of AES lies a repeating series of transformation rounds. Depending on the key length, AES
+          applies:
+        <ul>
+          <li>10 rounds for 128-bit keys</li>
+          <li>12 rounds for 192-bit keys</li>
+          <li>14 rounds for 256-bit keys [1][3]</li>
+        </ul>
         </p>
+
+        <p>
+          Each round (except the final one) consists of four core operations that systematically scramble and mix the
+          data
+          to obscure any patterns:
+        <ol>
+          <li> SubBytes – Non-linear substitution using an S-box</li>
+          <li>ShiftRows – Shifts the rows of the matrix to the left</li>
+          <li>MixColumns – Mixes the bytes in each column</li>
+          <li>AddRoundKey – Adds a round key derived from the original key [1][3]</li>
+        </ol>
+
+        </p>
+
+        <p>
+          These steps occur within a 4x4 matrix known as the state, which holds the intermediate values during
+          encryption
+          and decryption. The result is a transformation of data so complex that recovering the original input without
+          the
+          key is practically impossible [3].
+        </p>
+
+        <p>
+          To make the encryption flow more digestible, this website includes an interactive diagram that breaks down the
+          AES process round by round. You’ll see how a block of plaintext is transformed with each step—visually
+          representing byte substitution, shifting, mixing, and key addition.
+          This visualization will also highlight the differences between key sizes, showing how more bits result in more
+          rounds, which means greater complexity and higher security [1][3].
+        </p>
+
+
+
         <br>
         <br>
+
+
+
 
         <div id="Sbox">
           <hr>
@@ -132,8 +163,11 @@
 
   <footer id="footer_learn">
     <ul>
-      <li><a id="source1_learn">Cost of a Data Breach Report 2024. IBM Corporation, July 2024, https://www.ibm.com/reports/data-breach.</a></li>
-      <li><a id="source2_learn">Awati, Rahul, et al. “What Is the Advanced Encryption Standard (AES)?” TechTarget, Informa TechTarget, Feb. 2024, www.techtarget.com/searchsecurity/definition/Advanced-Encryption-Standard.</a></li>
+      <li><a id="source1_learn">Cost of a Data Breach Report 2024. IBM Corporation, July 2024,
+          https://www.ibm.com/reports/data-breach.</a></li>
+      <li><a id="source2_learn">Awati, Rahul, et al. “What Is the Advanced Encryption Standard (AES)?” TechTarget,
+          Informa TechTarget, Feb. 2024, www.techtarget.com/searchsecurity/definition/Advanced-Encryption-Standard.</a>
+      </li>
       <li><a id="source3_learn">Citation 3</a></li>
     </ul>
   </footer>
