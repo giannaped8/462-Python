@@ -212,7 +212,7 @@ nav li a:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width:100%;
+  width: 100%;
   gap: 10rem;
 }
 
@@ -220,7 +220,7 @@ nav li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width:30%;
+  width: 30%;
 }
 
 .person img {
@@ -254,9 +254,18 @@ nav li a:hover {
   padding: 2rem;
   padding-left: 0;
   gap: 2rem;
-  padding-bottom: 8rem;
+  padding-bottom: 18rem;
   /* adjust for footer */
 }
+
+#learnImgs{
+  display: grid;
+  place-items: center;
+}
+#learnImgs img{
+  max-width: 720px;
+}
+
 
 .sidebar {
   position: sticky;

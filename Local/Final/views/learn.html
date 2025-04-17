@@ -38,29 +38,31 @@
       </div>
 
 
-
       <div id="text_learn">
         <h1>Learn How AES Encryption Works</h1>
         <p>
           AES, or the Advanced Encryption Standard, is a symmetric key encryption algorithm that transforms plaintext
           into unreadable ciphertext using a series of well-defined steps.
           It was established by the U.S. National Institute of Standards and Technology (NIST) in 2001 and has since
-          become the global benchmark for secure data encryption [1].
+          become the global benchmark for secure data encryption <a href="#source1_learn">[1]</a>.
         </p>
         <p>
           AES operates on data blocks of 128 bits and supports key sizes of 128, 192, or 256 bits—each increasing the
-          number of transformation rounds and enhancing security [1][2].
+          number of transformation rounds and enhancing security <a href="#source1_learn">[1]</a><a
+            href="#source2_learn">[2]</a>.
           What sets AES apart is its combination of simplicity in design and formidable cryptographic strength, which
           makes it both efficient and resistant to brute-force attacks even
-          with the most powerful computers available today [2][3].
+          with the most powerful computers available today <a href="#source2_learn">[2]</a><a
+            href="#source3_learn">[3]</a>.
         </p>
 
         <p>
           AES plays a pivotal role in securing everything from banking systems and cloud storage to national defense
-          networks [2][4]. Because it’s a symmetric algorithm,
+          networks <a href="#source2_learn">[2]</a><a href="#source4_learn">[4]</a>. Because it’s a symmetric algorithm,
           the same key is used for both encryption and decryption—making secure key management essential. Its speed and
           resilience have made it the go-to encryption method for
-          technologies like VPNs, encrypted messaging apps, and secure web communications (HTTPS) [2][4].
+          technologies like VPNs, encrypted messaging apps, and secure web communications (HTTPS) <a
+            href="#source2_learn">[2]</a><a href="#source4_learn">[4]</a>.
         </p>
 
         <p>
@@ -69,7 +71,7 @@
         <ul>
           <li>10 rounds for 128-bit keys</li>
           <li>12 rounds for 192-bit keys</li>
-          <li>14 rounds for 256-bit keys [1][3]</li>
+          <li>14 rounds for 256-bit keys <a href="#source1_learn">[1]</a><a href="#source3_learn">[3]</a></li>
         </ul>
         </p>
 
@@ -81,65 +83,17 @@
           <li> SubBytes – Non-linear substitution using an S-box</li>
           <li>ShiftRows – Shifts the rows of the matrix to the left</li>
           <li>MixColumns – Mixes the bytes in each column</li>
-          <li>AddRoundKey – Adds a round key derived from the original key [1][3]</li>
+          <li>AddRoundKey – Adds a round key derived from the original key <a href="#source1_learn">[1]</a><a
+              href="#source3_learn">[3]</a></li>
         </ol>
-
         </p>
-
         <p>
           These steps occur within a 4x4 matrix known as the state, which holds the intermediate values during
-          encryption
-          and decryption. The result is a transformation of data so complex that recovering the original input without
-          the
-          key is practically impossible [3].
+          encryption and decryption <a href="#source3_learn">[3]</a>. The result is a transformation of data so complex
+          that recovering the original
+          input without the key is practically impossible. To help simplify this daunting process, each step is
+          explained further below.
         </p>
-
-        <p>
-          To make the encryption flow more digestible, this website includes an interactive diagram that breaks down the
-          AES process round by round. You’ll see how a block of plaintext is transformed with each step—visually
-          representing byte substitution, shifting, mixing, and key addition.
-          This visualization will also highlight the differences between key sizes, showing how more bits result in more
-          rounds, which means greater complexity and higher security [1][3].
-        </p>
-
-
-
-
-        <p>
-          As data leaks continue to make daily headlines, encryption is no longer just an option—it's a necessity.
-          In this past year alone, the average cost of a single data breach soared to an all time high of 4.88 million
-          dollars <a href="#source1_learn">(Cost of a Data Breach Report 2024)</a>.
-          From medical records to confidential government documents, data privacy is essential for individuals,
-          businesses, and national security alike.
-        </p>
-        <p>
-          The Advanced Encryption Standard (AES) is the strongest form of protection against these digital attacks,
-          arming
-          itself with a multitude of large,
-          cryptographic keys and an array of data manipulation techniques <a href="#source2_learn">(Awatit)</a>. Maintaining the highest level of
-          security over digital media, AES encryption
-          is widely employed by the U.S. government and industry leaders alike for secure data transmission and storage 
-          <a href="#source2_learn">(Awatit)</a>.
-        </p>
-        <p>
-          Despite AES encryption's importance, understanding the step-by-step processes involved in secure encryption
-          remains complex and inaccessible to many learners.
-          Furthermore, while encryption can be software-driven, hardware acceleration offers the potential for
-          significant
-          improvements in speed and security, yet
-          practical demonstrations are limited. This gap in understanding AES encryption and hardware offloading
-          techniques creates an educational void that demands attention.
-        </p>
-        <p>
-          This project aims to develop an educational website that provides a clear, interactive demonstration of the
-          AES
-          encryption process. Moreover, it will perform
-          three main functions: illustrate each step of AES encryption in a user-friendly and visually engaging manner;
-          integrate a PYNQ circuit board to demonstrate
-          the hardware acceleration of AES encryption; and offer learners a comprehensive understanding of both the
-          theoretical and practical aspects of modern cryptographic practices.
-        </p>
-
         <br>
         <br>
 
@@ -149,7 +103,27 @@
         <div id="Sbox">
           <hr>
           <h2>Substitution Box (S-Box)</h2>
-
+          <p>
+            At the core of AES’s security is the Substitution Box (S-Box), a nonlinear transformation that introduces
+            confusion into the encryption process—a critical defense against linear and differential cryptanalysis. The
+            S-Box performs a byte-by-byte substitution using a fixed 16×16 lookup table containing carefully chosen
+            values <a href="#source1_learn">[1]</a><a href="#source2_learn">[2]</a>.
+          </p>
+          <p>
+            Each byte in the state matrix is replaced with its corresponding value from the S-Box, ensuring that even
+            small changes in input result in dramatically different outputs. This non-linearity, combined with its
+            invertibility (essential for decryption) and resistance to algebraic attacks, gives AES its cryptographic
+            edge <a href="#source2_learn">[2]</a><a href="#source3_learn">[3]</a>. To reverse the encryption process
+            during decryption, AES uses the inverse S-Box, applying the
+            opposite transformation to restore the original data. The values of the S-Box remain constant across all
+            encryptions of AES, following the constants below.
+          </p>
+          <div id="learnImgs">
+            <img src="/static/images/sbox.png" alt="NIST SBox">
+            <p>
+              S-Box Constants <a href="#source1_learn">[1]</a>
+            </p>
+          </div>
           <br> <br>
         </div>
 
@@ -157,23 +131,74 @@
         <div id="keyExpansion">
           <hr>
           <h2>Key Expansion</h2>
+          <p>
+            AES doesn’t use the original encryption key as-is for every round. Instead, it performs Key Expansion—a
+            process that derives a unique key for each round of AES from the original secret key <a
+              href="#source1_learn">[1]</a><a href="#source3_learn">[3]</a>.
+          </p>
 
+          <p>
+            This expansion uses a series of operations including byte rotation, S-Box substitution, and an XOR with
+            round
+            constants (known as Rcon). The result is a full key schedule that produces:
+          <ul>
+            <li>11 round keys for a 128-bit AES key</li>
+            <li>13 round keys for a 192-bit AES key</li>
+            <li>15 round keys for a 256-bit AES key</li>
+          </ul>
+          Each of these keys is the same size as a data block (128 bits) and is used exactly once, ensuring that key
+          reuse is avoided—a critical safeguard against many forms of cryptographic attacks.
+          </p>
+
+          <p>
+            For example, a 128-bit key is broken into four 32-bit words. Through key expansion, this grows into 44
+            words—each group of four forming the round keys for AES’s 10 rounds (plus the initial round key). These
+            unique
+            keys are all utilized at different parts of the encryption process, as visualized below.
+          </p>
+
+
+
+          <div id="learnImgs">
+            <img src="/static/images/roundKey.png" alt="Geeks4Geeks Round Key">
+            <p>
+              Round Key Schedule <a href="#source5_learn">[5]</a>
+            </p>
+          </div>
           <br> <br>
         </div>
+
+
 
 
         <div id="addRoundKey">
           <hr>
           <h2>Add Round Key</h2>
-
+          <p>
+            The Add Round Key step is where AES injects the secret key into the encryption process. It’s performed by
+            applying a simple bitwise XOR operation between the current state matrix and the round key derived from the
+            key schedule <a href="#source1_learn">[1]</a>.
+          </p>
+          <p>
+            Though this step is mathematically simple, it plays a critical role in security, mixing the plaintext (or
+            intermediate state) with the key to mask the original data. This step occurs before the first round of AES
+            and at the end of every round
+          </p>
           <br> <br>
         </div>
+
 
 
         <div id="subBytes">
           <hr>
           <h2>Sub Bytes</h2>
-
+          <p>
+            Often confused with the S-Box itself, Sub Bytes is the action of applying the S-Box to each byte of the
+            state matrix. This step adds non-linearity (confusion) to AES by ensuring that even a single-bit change in
+            input dramatically affects the output <a href="#source1_learn">[1]</a><a href="#source3_learn">[3]</a>. Each
+            byte is substituted independently using the predefined
+            S-Box, creating a more complex and less predictable encrypted output.
+          </p>
           <br> <br>
         </div>
 
@@ -181,7 +206,15 @@
         <div id="shiftRows">
           <hr>
           <h2>Shift Rows</h2>
-
+          <p>
+            The Shift Rows operation enhances diffusion by cyclically shifting the rows of the state matrix to the left.
+            Unlike Sub Bytes, which affects each byte individually, Shift Rows manipulates the structure of the matrix
+            to spread the bytes across columns.
+          </p>
+          <p>
+            This staggered shifting ensures that bytes originally in the same column are now distributed across multiple
+            columns—helping break patterns and increase entropy.
+          </p>
           <br> <br>
         </div>
 
@@ -189,7 +222,22 @@
         <div id="mixColumns">
           <hr>
           <h2>Mix Columns</h2>
-
+          <p>
+            Mix Columns is the most mathematically intensive AES operation. It transforms each column of the state
+            matrix by multiplying it with a fixed matrix using arithmetic in Galois Field (2⁸)—not normal integer math
+            <a href="#source1_learn">[1]</a><a href="#source3_learn">[3]</a>. The result is a new column with mixed
+            bytes, creating stronger interdependence between them.
+          </p>
+          <p>
+            Despite the complexity, this step ensures high diffusion, as each byte in a column affects all four bytes
+            after transformation. Mix Columns ensures that small changes in one byte ripple through the column,
+            strengthening the cipher against statistical analysis. However, this step is omitted in the final round to
+            allow for a proper inverse during decryption.
+          </p>
+          <p>
+            <strong>Note: </strong>This operation is fast in hardware, making AES ideal for embedded and accelerated
+            systems.
+          </p>
           <br> <br>
         </div>
 
@@ -198,14 +246,27 @@
   </main>
 
   <footer id="footer_learn">
-    <ul>
-      <li><a id="source1_learn">Cost of a Data Breach Report 2024. IBM Corporation, July 2024,
-          https://www.ibm.com/reports/data-breach.</a></li>
+    <ol>
+      <li><a id="source1_learn">National Institute of Standards and Technology (NIST). FIPS PUB 197: Advanced Encryption
+          Standard (AES). November
+          2001. https://csrc.nist.gov/publications/detail/fips/197/final</a></li>
+      <br>
       <li><a id="source2_learn">Awati, Rahul, et al. “What Is the Advanced Encryption Standard (AES)?” TechTarget,
-          Informa TechTarget, Feb. 2024, www.techtarget.com/searchsecurity/definition/Advanced-Encryption-Standard.</a>
+          Informa TechTarget, Feb. 2024.
+          https://www.techtarget.com/searchsecurity/definition/Advanced-Encryption-Standard</a></li>
+      <br>
+      <li><a id="source3_learn">Stallings, William. Cryptography and Network Security: Principles and Practice, 8th
+          Edition. Pearson, 2022.
+          https://dl.hiva-network.com/Library/security/Cryptography-and-network-security-principles-and-practice.pdf3</a>
       </li>
-      <li><a id="source3_learn">Citation 3</a></li>
-    </ul>
+      <br>
+      <li><a id="source4_learn"> NIST Computer Security Resource Center. “Block Cipher Techniques Project.”
+          https://csrc.nist.gov/projects/block-cipher-techniques</a></li>
+      <br>
+      <li><a id="source5_learn"> "Advanced Encryption Standard (AES)." GeeksforGeeks, 4 Apr. 2023,
+          https://www.geeksforgeeks.org/advanced-encryption-standard-aes/.</a></li>
+
+    </ol>
   </footer>
 
 
@@ -240,6 +301,14 @@
       event.preventDefault();  // Prevent default anchor behavior
       window.location.href = '/';  // Navigate to the home page
     });
+
+
+    /*
+     <a href="#source1_learn">[1]</a>
+  <a href="#source2_learn">[2]</a>
+  <a href="#source3_learn">[3]</a>
+  <a href="#source4_learn">[4]</a>
+    */
 
   </script>
 </body>
