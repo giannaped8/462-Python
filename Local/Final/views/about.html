@@ -26,57 +26,83 @@
 
   <main>
     <div id="about_holder">
-    <div id="about_main">
-      <h1>About Us</h1>
-      <img src="/static/images/aes_about.jpeg" alt="WashU" title="aes_about" id="aes_about">
-  
-      <p>
-        As data leaks continue to make daily headlines, encryption is no longer just an option—it's a necessity.
-        In this past year alone, the average cost of a single data breach soared to an all time high of 4.88 million
-        dollars <a href="#source1_learn">(Cost of a Data Breach Report 2024)</a>.
-        From medical records to confidential government documents, data privacy is essential for individuals,
-        businesses, and national security alike.
-      </p>
-      <p>
-        The Advanced Encryption Standard (AES) is the strongest form of protection against these digital attacks,
-        arming
-        itself with a multitude of large,
-        cryptographic keys and an array of data manipulation techniques <a href="#source2_learn">(Awatit)</a>. Maintaining the highest level of
-        security over digital media, AES encryption
-        is widely employed by the U.S. government and industry leaders alike for secure data transmission and storage 
-        <a href="#source2_learn">(Awatit)</a>.
-      </p>
-      <p>
-        Despite AES encryption's importance, understanding the step-by-step processes involved in secure encryption
-        remains complex and inaccessible to many learners.
-        Furthermore, while encryption can be software-driven, hardware acceleration offers the potential for
-        significant
-        improvements in speed and security, yet
-        practical demonstrations are limited. This gap in understanding AES encryption and hardware offloading
-        techniques creates an educational void that demands attention.
-      </p>
-      <p>
-        This project aims to develop an educational website that provides a clear, interactive demonstration of the
-        AES
-        encryption process. Moreover, it will perform
-        three main functions: illustrate each step of AES encryption in a user-friendly and visually engaging manner;
-        integrate a PYNQ circuit board to demonstrate
-        the hardware acceleration of AES encryption; and offer learners a comprehensive understanding of both the
-        theoretical and practical aspects of modern cryptographic practices.
-      </p>
-  
-    </div>
-    <div id="about_clear"></div>
-  </div>
+      <div id="about_main">
+        <h1>About Us</h1>
+        <img src="/static/images/aes_about.jpeg" alt="WashU" title="aes_about" id="aes_about">
+        <p>
+          This project was developed by Gianna Pedicini and Isabella Lombardo, senior undergraduate students pursuing
+          Bachelor of Science degrees in Computer Engineering at Washington University in St. Louis, Class of 2025.
+          Completed under the advisory of Dr. Michael Hall, this work represents the final deliverable for our senior
+          capstone project in the McKelvey School of Engineering.
+        </p>
 
-  <footer id="footer_about">
-    <ul>
-      <li><a id="source1_about">Cost of a Data Breach Report 2024. IBM Corporation, July 2024, https://www.ibm.com/reports/data-breach.</a></li>
+        <p>
+          As part of our capstone requirement, we were tasked with applying hardware acceleration to an algorithm of our
+          choosing. Drawing on our interests in cybersecurity, embedded systems, and educational accessibility, we chose
+          the Advanced Encryption Standard (AES)—a widely used encryption algorithm critical to modern digital security.
+        </p>
+
+        <p>
+          The result is this interactive, educational website designed to demystify AES encryption for a broad audience.
+          The platform allows users to input plaintext, initiate AES encryption, and observe the transformation in real
+          time. To simulate practical performance improvements, the encryption process is offloaded to a PYNQ Z2 FPGA
+          development board, demonstrating the role of hardware acceleration in cryptographic systems.
+        </p>
+        <p>
+          The website is the culmination of a semester-long effort and follows a structured development path:
+        <ul>
+          <li>
+            Milestone 1 involved establishing communication between the front-end and the FPGA via a REST API and
+            verifying data transfer between the microprocessor and hardware.
+          </li>
+          <li>
+            Milestone 2 focused on implementing key AES modules on the FPGA, supported by a software-based model for
+            verification.
+          </li>
+          <li>
+            The final deliverable, presented here, integrates these components into a complete AES encryption pipeline,
+            paired with intuitive, interactive visualizations for educational use.
+          </li>
+        </ul>
+        </p>
+
+        <p>
+          By bridging the gap between theoretical cryptography and hardware-level implementation, our website serves as
+          a tool for learners to gain a deeper, hands-on understanding of secure data systems and the growing importance
+          of hardware acceleration in the field.
+        </p>
+
+
+        <p>
+          <strong>Gianna Pedicini</strong>
+          <br>
+          <strong>Isabella Lombardo</strong>
+          <br>
+          <i>B.S. in Computer Engineering, Class of 2025</i>
+          <br>
+          <i>McKelvey School of Engineering</i>
+          <br>
+          <i>Washington University in St. Louis</i>
+        </p>
+      </div>
+      <div id="about_clear"></div>
       <br>
-      <li><a id="source2_about">Awati, Rahul, et al. “What Is the Advanced Encryption Standard (AES)?” TechTarget, Informa TechTarget, Feb. 2024, www.techtarget.com/searchsecurity/definition/Advanced-Encryption-Standard.</a></li>
-    </ul>
-  </footer>
+      <hr>
+      <h1>Meet the Team</h1>
+      <section class="headshots-section">
+        <div class="headshots-container">
+          <div class="person">
+            <img src="/static/images/gianna.jpeg" alt="Gianna Pedicini">
+            <p>Gianna Pedicini</p>
+          </div>
+          <div class="person">
+            <img src="/static/images/isabella.jpeg" alt="Isabella Lombardo">
+            <p>Isabella Lombardo</p>
+          </div>
+        </div>
+      </section>
 
+    </div>
   </main>
 
   <script>
