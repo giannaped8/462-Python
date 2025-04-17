@@ -258,11 +258,12 @@ nav li a:hover {
   /* adjust for footer */
 }
 
-#learnImgs{
+#learnImgs {
   display: grid;
   place-items: center;
 }
-#learnImgs img{
+
+#learnImgs img {
   max-width: 720px;
 }
 
@@ -419,12 +420,49 @@ button:hover {
 
 /* HISTORY PAGE */
 #history_main {
-  margin: 2rem;
+  padding-bottom: 15rem;
+}
+
+#text_history {
+  margin: 2rem 10%;
   padding: 10pt;
   background-color: white;
   color: black;
   height: max-content;
+
 }
+
+/* Settings for Footer placement */
+#body_history {
+  position: relative;
+  min-height: 100vh;
+}
+
+#footer_history {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  background-color: #333;
+  color: white;
+
+  font-style: italic;
+  font-weight: normal;
+  padding: 0;
+}
+
+#footer_history ul li {
+  padding: 1pt;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+
+
+
+
+
 
 
 /* TIMING PAGE */

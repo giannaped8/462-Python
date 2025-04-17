@@ -27,8 +27,14 @@
     <main>
         <div id="demo_main">
             <div class="demo_title">
-                <h1>Senior Capstone Project: AES Python Encryption</h1>
-                <h2>Enter a string below, and we will encrypt it with AES-128.</h2>
+                <h1>AES-128 Encryption Demonstration</h1>
+                <h2>Enter a 16-byte string below to see how AES-128 encryption works in action.</h2>
+                <p> For this demonstration, we use the fixed 16-byte key: "Thisisakey123456". The full encryption
+                    process, outlined step-by-step on our Learn page, is performed by offloading the computation to a
+                    PYNQ Z2 FPGA board.When you click Encrypt, your input is securely transmitted to the PYNQ board,
+                    which returns the encrypted ciphertext in real time. Click Decrypt to reverse the process in Python
+                    and view the original message.
+                </p>
             </div>
 
             <form id="encryptForm" action="/encrypt" method="post">
