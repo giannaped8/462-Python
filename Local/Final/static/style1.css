@@ -184,7 +184,7 @@ nav li a:hover {
 
 /* ABOUT PAGE */
 #about_holder {
-  margin: 2rem;
+  margin: 2rem 8%;
   padding: 10pt;
   background-color: white;
   color: black;
@@ -358,7 +358,7 @@ nav li a:hover {
 
 /* DEMO PAGE */
 #demo_main {
-  margin: 2rem;
+  margin: 2rem 8%;
   padding: 10pt;
   background-color: white;
   color: black;
@@ -467,7 +467,7 @@ button:hover {
 
 /* TIMING PAGE */
 #timing_main {
-  margin: 2rem;
+  margin: 2rem 10%;
   padding: 10pt;
   background-color: white;
   color: black;
